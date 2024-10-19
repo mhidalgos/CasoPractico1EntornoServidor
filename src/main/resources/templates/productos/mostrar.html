@@ -49,6 +49,14 @@
       </tr>
     </thead>
     <tbody>
+		<tr th:each="p:${productos}">
+		        <td th:text="${p.nombre}"></td>
+				<td th:text="${p.descripcion}"></td>
+				<td th:text="${p.precio}"></td>
+
+				
+				
+		        </tr> 
       
     </tbody>
   </table>

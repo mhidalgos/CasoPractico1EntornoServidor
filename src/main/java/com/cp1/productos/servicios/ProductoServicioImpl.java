@@ -1,5 +1,6 @@
 package com.cp1.productos.servicios;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,10 @@ public class ProductoServicioImpl implements ProductoServicio{
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		productoDAO.deleteById(id);
+	}
+	@Override
+	public List<Producto> findAll() {
+		return productoDAO.findAll();
 	}
 
 }
