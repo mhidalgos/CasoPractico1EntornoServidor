@@ -12,15 +12,15 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "productos")
 public class Producto {
-	//Esta clase modela los productos que conformarán el catálogo de experiencias
+	//Esta clase modela los productos que conformarán el catálogo de productos
 	@Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; //Identificador único de la experiencia que se genera automáticamente
+    private Long id; //Identificador único del producto que se genera automáticamente
 
-    private String nombre; // Nombre de la experiencia
-    private String descripcion; // Descripción de la experiencia
-    private Double precio; // Precio de la experiencia
-    private Date fecha; // Fecha de la experiencia
+    private String nombre; // Nombre del producto
+    private String descripcion; // Descripción del producto
+    private Double precio; // Precio del producto
+    
     
     @ManyToOne
     private Proveedor proveedor; //identificador del proveedor
@@ -30,25 +30,17 @@ public class Producto {
     }
     
     
-	public Producto(Long id, String nombre, String descripcion, Double precio, Date fecha, Proveedor proveedor) {
+	public Producto(Long id, String nombre, String descripcion, Double precio, Proveedor proveedor) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.precio = precio;
-		this.fecha = fecha;
 		this.proveedor = proveedor;
 	}
 
 
-	public Producto(Long id, String nombre, String descripcion, Double precio, Date fecha) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.precio = precio;
-		this.fecha = fecha;
-	}
+
 	public Long getId() {
 		return id;
 	}
@@ -73,12 +65,8 @@ public class Producto {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-	public Date getFecha() {
-		return fecha;
-	}
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
+	
+	
 
 	public Proveedor getProveedor() {
 		return proveedor;
