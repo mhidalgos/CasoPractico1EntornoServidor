@@ -29,7 +29,9 @@ public class ProductoControlador {
 	
 	@GetMapping("/crear")
 	public String crear (Model model) {
-		model.addAttribute("proveedor", proveedorServicio.findAll());
+		Producto producto = new Producto();
+		model.addAttribute("producto", producto);
+		model.addAttribute("proveedores", proveedorServicio.findAll());
 		return "productos/crear";
 	}
 
