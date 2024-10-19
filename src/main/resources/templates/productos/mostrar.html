@@ -33,9 +33,10 @@
   </h1>
 
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item active">Ver Productos</li>
+    <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+    <li class="breadcrumb-item active">Ver productos</li>
   </ol>
+  <a class="btn btn-primary" th:href="@{/productos/crear}" style="float: right"> Añadir producto</a>
 
   <h2>Producto</h2>
   <table class="table">
