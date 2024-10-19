@@ -34,26 +34,24 @@
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
-    <li class="breadcrumb-item active">Ver productos</li>
+    <li class="breadcrumb-item active">Ver proveedores</li>
   </ol>
-  <a class="btn btn-primary" th:href="@{/productos/crear}" style="float: right; background-color: #4CAF50; border-color: #4CAF50; color: white;"> Añadir producto</a>
+  <a class="btn btn-primary" th:href="@{/proveedores}" style="float: right; background-color: #4CAF50; border-color: #4CAF50; color: white;"> Añadir proveedor</a>
 
-  <h2>Producto</h2>
+  <h2>Proveedor</h2>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Proveedor</th>
+        <th scope="col">Contacto</th>
+        <th scope="col">Dirección</th>
       </tr>
     </thead>
     <tbody>
-		<tr th:each="p:${productos}">
+		<tr th:each="p:${proveedor}">
 		        <td th:text="${p.nombre}"></td>
-				<td th:text="${p.descripcion}"></td>
-				<td th:text="${p.precio}"></td>
-				<td th:text="${p.proveedor.nombre}"></td>
+				<td th:text="${p.contacto}"></td>
+				<td th:text="${p.direccion}"></td>
 		        </tr> 
       
     </tbody>
