@@ -2,10 +2,15 @@ package com.cp1.productos.modelo;
 
 import java.sql.Date;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "productos")
 public class Producto {
 	//Esta clase modela los productos que conformarán el catálogo de experiencias
 	@Id 
@@ -17,10 +22,25 @@ public class Producto {
     private Double precio; // Precio de la experiencia
     private Date fecha; // Fecha de la experiencia
     
+    @ManyToOne
+    private Proveedor proveedor; //identificador del proveedor
+    
     public Producto() {            
     	
     }
     
+    
+	public Producto(Long id, String nombre, String descripcion, Double precio, Date fecha, Proveedor proveedor) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.fecha = fecha;
+		this.proveedor = proveedor;
+	}
+
+
 	public Producto(Long id, String nombre, String descripcion, Double precio, Date fecha) {
 		super();
 		this.id = id;
@@ -58,6 +78,14 @@ public class Producto {
 	}
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
+	}
+
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
 	}
     
     
