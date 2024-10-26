@@ -43,5 +43,8 @@ public class ProductoServicioImpl implements ProductoServicio{
 	public List<Producto> findAll() {
 		return productoDAO.findAll();
 	}
+	public List<Producto> findByNombre(String nombre) {
+	    return productoDAO.findByNombreContainingIgnoreCase(nombre);
+	}
 
 }

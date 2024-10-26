@@ -11,5 +11,5 @@ public interface ProductoServicio {
 	public void update (Producto producto);
 	public void delete (Long id);
 	public List<Producto> findAll();
-
+	public List<Producto> findByNombre(String nombre);
 }

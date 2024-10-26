@@ -6,12 +6,10 @@
 		<div class="container">
 			<a class="navbar-brand" th:href="@{/home}">Productos La Siberia</a>
 
-			<form class="form-inline my-2 my-lg-0" method="post" action="#">
-				<input class="form-control mr-sm-2" type="search"
-					placeholder="Buscar" aria-label="Search" name="nombre"
-					autocomplete="off">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-			</form>
+			<form action="#" th:action="@{/productos/buscar}" method="get">
+						      <input type="text" name="query" th:value="${query}" placeholder="Buscar cursos por nombre...">
+						      <button type="submit">Buscar</button>
+						  </form>
 
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
